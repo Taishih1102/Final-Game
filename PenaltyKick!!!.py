@@ -1316,10 +1316,21 @@ def main():
         if instructions.response == "Quit":
             keepGoing = False
             break
+        
+        elif instructions.response == "Setting":
+            setting = Setting()
+            setting.start()
+    
+            if setting.response == "Quit":
+                keepGoing = False
+            elif setting.response == "Play":
+                continue
+            
         elif instructions.response == "Play":
             rounds = 1
             scoreArg = 0
             scoreFra = 0
+            
             
             while rounds <= 5 and keepGoing:
                 kickerState = KickerState(rounds, scoreArg, scoreFra)
@@ -1386,5 +1397,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
